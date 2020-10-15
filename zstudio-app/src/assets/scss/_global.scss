@@ -1,0 +1,165 @@
+// Global styling for this template
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  @include sans-serif-font;
+  font-weight:400;  
+  background-color:$black;  
+}
+
+hr {
+  max-width: 50px;
+  border-width: 3px;
+  border-color: $primary;
+}
+
+hr.light {
+  border-color: $white;
+}
+
+a {
+  color: $primary;
+  @include transition-all;
+  &:hover {
+    color: darken($primary, .1);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight:400;
+}
+h2{
+  text-transform:uppercase;
+  margin-bottom:2em;
+}
+h3,h4{
+  margin-bottom:1.2em;
+}
+h4{
+  font-size:1.2em;
+}
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-dark {
+  background-color: $gray-900 !important;
+}
+
+.bg-light{
+  background-color: $gray-100  !important;
+}
+
+.text-faded {
+  color: fade-out($white, .3);
+}
+
+section {
+  padding: 4rem 0;
+  overflow:hidden;
+  background-color:$white;
+  @media (min-width: 1024px) {
+      padding: 8rem 0;
+  }
+}
+
+.section-heading {
+  margin-top: 0;
+}
+
+::-moz-selection {
+  color: $white;
+  background: $gray-900;
+  text-shadow: none;
+}
+
+::selection {
+  color: $white;
+  background: $gray-900;
+  text-shadow: none;
+}
+
+img::selection {
+  color: $white;
+  background: transparent;
+}
+
+img::-moz-selection {
+  color: $white;
+  background: transparent;
+}
+
+.btn{
+  text-align:center;  
+}
+
+#about{
+  img{
+    width:100%;
+    @media (min-width: 1025px) {
+      width:700px;
+    }
+    @media (min-width: 1367px) {
+      width:auto;
+    }
+  }
+}
+
+
+#services{
+  img.sr-icons{
+    display:inline-block;
+    width:48px;
+    margin-right:10px;
+  }
+}
+
+#work{  
+  background:$white url(../images/bg-contact.png) no-repeat 0 bottom;
+  background-size:100%;
+  padding-bottom:200px;
+  img{   
+    width:100%;
+    margin-bottom:20px;
+    @media (min-width: 1025px) {
+      position:absolute;
+      right:10%;
+      width:600px;
+    }
+    @media (min-width: 1367px) {
+      width:auto;
+    }
+  }
+  .btn-outline{
+    margin-top:30px;
+  }
+  @media (min-width: 1367px) {
+      padding-bottom:400px;
+  }
+}
+#contact{
+  .contact-form{
+    @media (min-width: 769px) {
+      margin:0 -20px;
+    }
+    
+    label{
+      display:none;
+    }
+    button{
+      margin-top:30px;
+    }
+  }
+}
+footer{
+    color:$white;
+}

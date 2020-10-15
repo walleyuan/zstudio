@@ -1,0 +1,73 @@
+// Bootstrap overrides for this template
+.text-primary {
+  color: $primary !important;
+}
+
+.btn {
+  font-weight: 400;
+  border: none;
+  border-radius: 300px;
+  width:250px;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+}
+
+.btn-primary {
+  background-color: $secondary;
+  border-color: $secondary;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: darken($secondary, 5%) !important;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(240, 95, 64,.5) !important;
+  }
+}
+
+.btn-light{
+  border:2px solid $white;
+  background-color:$white;
+  color:$primary;
+  overflow: hidden;
+  &:hover,&:focus,&:active{
+    color: $white;
+    background-color: transparent !important;
+  }
+  .fa{
+    float:left;
+    vertical-align: middle;
+    padding:5px 15px 0 0;
+  }
+  span{
+    float:left;
+    em{
+      font-style: normal;
+      font-weight:400;
+      display: block;
+      font-size:smaller;
+    }
+  }
+}
+
+.btn-outline{
+  background-color:transparent;
+  color:$white;
+  &:hover,&:focus,&:active{
+    color: $primary;
+    background: $white !important;
+  }
+}
+
+.btn-outline-dark{
+  color:$primary;
+  border-color:$primary;
+  &:hover,&:focus,&:active{
+    color: $white;
+    background: $primary !important;
+  }
+}

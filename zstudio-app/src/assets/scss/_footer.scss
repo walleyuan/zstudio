@@ -1,0 +1,14 @@
+footer{
+  padding:2rem 0;
+  font-size:0.8rem;
+  span{
+    padding:0 0.8rem;
+  }
+  a{
+    color: $gray-600;
+    &:hover, &:focus{
+      color: $black;
+    }
+
+  }
+}
