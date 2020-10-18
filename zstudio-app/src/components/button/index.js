@@ -13,15 +13,15 @@ export default class Button extends React.Component {
     render() {
       const className = [
         "component-button",
-        this.props.cssClass =="" ? "btn btn-light btn-outline btn-outline-dark btn-xl js-scroll-trigger" : this.props.cssClass
+        this.props.cssClass ==="" ? "btn btn-light btn-outline btn-outline-dark btn-xl js-scroll-trigger" : this.props.cssClass
       ];
 
-      const Target = this.props.Target =="" ? "_blank" : this.props.Target;
-      const Href = this.props.hrefLink =="" ? "#" : this.props.hrefLink;
+      const Target = this.props.Target ==="" ? "_blank" : this.props.Target;
+      const Href = this.props.hrefLink ==="" ? "#" : this.props.hrefLink;
       
   
       return (
-        <a class={className.join(" ").trim()} target= {Target} href={Href}>
+        <a className={className.join(" ").trim()} target= {Target} href={Href}>
             {this.props.name}
         </a>
       );
