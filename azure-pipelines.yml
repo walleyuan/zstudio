@@ -21,13 +21,9 @@ steps:
     npm install
   displayName: 'npm install'
 
-- task: PowerShell@2
+- task: CmdLine@2
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      
-      react-scripts build
+    script: 'react-scripts build'
 
 - script: 
     react-scripts build
