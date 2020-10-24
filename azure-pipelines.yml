@@ -6,7 +6,9 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+
 - task: PowerShell@2
+  displayName: "dir $(Build.SourcesDirectory)"
   inputs:
     targetType: 'inline'
     script: |
@@ -23,10 +25,11 @@ steps:
   displayName: 'npm install'
   workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
-- script: 
-    react-scripts build
-  displayName: 'react-scripts build'
-  workingDirectory: $(Build.SourcesDirectory)/zstudio-app
+- task: CmdLine@2
+  inputs:
+    script: |
+      react-scripts build
+    workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
 - task: ArchiveFiles@2
   displayName: 'Archive files'
