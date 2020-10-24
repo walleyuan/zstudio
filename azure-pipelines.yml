@@ -21,7 +21,7 @@ steps:
   inputs:
     script: |
       dir $(Build.SourcesDirectory)/zstudio-app/node_modules
-      npm build
+      npm run-script build
     workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
 - task: ArchiveFiles@2
