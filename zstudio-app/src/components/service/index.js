@@ -21,7 +21,7 @@ export default class Section extends React.Component {
             <section className={this.props.sectionCssClass} id={this.props.sectionId}>
                 <div className="container">
                     <h2>{this.props.title}</h2>
-                    <div class="row">
+                    <div className="row">
                     <Panel title="Design" 
                            src={imgPancil}
                            description ="Design plays a vital role in all our projects. IPerformed by qualified and highly talented designers, this template can impress anyone." 

@@ -385,3 +385,6 @@ footer {
   .btn-outline-dark:hover, .btn-outline-dark:focus, .btn-outline-dark:active {
     color: #fff;
     background: #000 !important; }
+
+.carousel-inner {
+  overflow: visible; }
