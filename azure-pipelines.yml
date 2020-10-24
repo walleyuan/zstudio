@@ -27,21 +27,15 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Archive files'
   inputs:
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    rootFolderOrFile: '$(Build.SourcesDirectory)/zstudio-app/publish'
     includeRootFolder: false
     archiveType: zip
     archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
     replaceExistingArchive: true
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Build Artifacts'
-  inputs: 
-    pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-
-- task: AzureRmWebAppDeployment@4
+- task: DownloadBuildArtifacts@0
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Pay-As-You-Go(3477a88b-8d39-43be-a10f-6461b4d898d0)'
-    appType: 'webApp'
-    WebAppName: 'zmstudio'
-    packageForLinux: '$(System.ArtifactsDirectory)/$(Build.BuildId).zip'
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    downloadPath: '$(System.ArtifactsDirectory)'
