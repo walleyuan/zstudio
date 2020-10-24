@@ -6,6 +6,12 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      cd zstudio-app
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
