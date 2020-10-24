@@ -26,6 +26,7 @@ steps:
   workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
 - task: CmdLine@2
+  displayName: "react-scripts build"
   inputs:
     script: |
       dir
