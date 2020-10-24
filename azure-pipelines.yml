@@ -29,6 +29,7 @@ steps:
   displayName: "react-scripts build"
   inputs:
     script: |
+      cd $(Build.SourcesDirectory)/zstudio-app
       dir
       react-scripts build
     workingDirectory: $(Build.SourcesDirectory)/zstudio-app
