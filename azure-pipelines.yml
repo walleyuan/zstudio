@@ -11,13 +11,6 @@ steps:
     targetType: 'inline'
     script: |
       # Write your PowerShell commands here.
-      cd zstudio-app
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
       dir $(Build.SourcesDirectory)
 
 - task: NodeTool@0
@@ -30,14 +23,10 @@ steps:
   displayName: 'npm install'
   workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
-- task: CmdLine@2
-  inputs:
-    script: 'react-scripts build'
-
 - script: 
     react-scripts build
   displayName: 'react-scripts build'
-
+  workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
 - task: ArchiveFiles@2
   displayName: 'Archive files'
