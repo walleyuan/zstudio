@@ -28,6 +28,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
+      dir
       react-scripts build
     workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
