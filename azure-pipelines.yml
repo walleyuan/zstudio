@@ -21,6 +21,10 @@ steps:
     npm install
   displayName: 'npm install'
 
+- script: 
+    npm install react-scripts
+  displayName: 'npm install react-scripts'
+
 
 - script: 
     react-scripts build
