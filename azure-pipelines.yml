@@ -25,7 +25,7 @@ steps:
 - script: 
     react-scripts build
   displayName: 'react-scripts build'
-  workingDirectory: $(directory)
+
 
 - task: ArchiveFiles@2
   displayName: 'Archive files'
