@@ -12,7 +12,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your PowerShell commands here.
       dir $(Build.SourcesDirectory)
 
 - task: NodeTool@0
