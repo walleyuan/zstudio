@@ -1,0 +1,44 @@
+# Starter pipeline
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: 
+    npm install
+  displayName: 'npm install'
+  workingDirectory: $(directory)
+
+- script: 
+    react-scripts build
+  displayName: 'react-scripts build'
+  workingDirectory: $(directory)
+
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Build Artifacts'
+  inputs: 
+    pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(3477a88b-8d39-43be-a10f-6461b4d898d0)'
+    appType: 'webApp'
+    WebAppName: 'zmstudio'
+    packageForLinux: '$(System.ArtifactsDirectory)/$(Build.BuildId).zip'
