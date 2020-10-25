@@ -24,29 +24,14 @@ steps:
       npm run-script build
     workingDirectory: $(Build.SourcesDirectory)/zstudio-app
 
-# - task: ArchiveFiles@2
-#   displayName: 'Archive files'
-#   inputs:
-#     rootFolderOrFile: '$(Build.SourcesDirectory)/zstudio-app/build'
-#     includeRootFolder: false
-#     archiveType: zip
-#     archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-#     replaceExistingArchive: true
-
-
-# - task: CopyPublishBuildArtifacts@1
-#   inputs:
-#     CopyRoot: '$(Build.SourcesDirectory)/zstudio-app/build'
-#     Contents: '**'
-#     ArtifactName: 'zstudio-$(Build.BuildId).zip'
-#     ArtifactType: 'Container'
-
-# - task: DownloadBuildArtifacts@0
-#   inputs:
-#     buildType: 'current'
-#     downloadType: 'single'
-#     artifactName: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-#     downloadPath: '$(System.ArtifactsDirectory)'
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)/zstudio-app/build'
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
   inputs:
