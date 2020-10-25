@@ -47,3 +47,9 @@ steps:
 #     downloadType: 'single'
 #     artifactName: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
 #     downloadPath: '$(System.ArtifactsDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
