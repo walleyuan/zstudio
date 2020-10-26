@@ -121,13 +121,33 @@ img::-moz-selection {
     #work {
       padding-bottom: 400px; } }
 
-@media (min-width: 769px) {
-  #contact .contact-form {
-    margin: 0 -20px; } }
-#contact .contact-form label {
-  display: none; }
-#contact .contact-form button {
-  margin-top: 30px; }
+#contact .contact-form {
+  /*label{
+    display:none;
+  }*/ }
+  @media (min-width: 769px) {
+    #contact .contact-form {
+      margin: 0 -20px; } }
+  #contact .contact-form button {
+    margin-top: 30px; }
+  #contact .contact-form textarea {
+    height: 100px; }
+  #contact .contact-form ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #adb5bd;
+    font-style: italic; }
+  #contact .contact-form ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #adb5bd;
+    font-style: italic; }
+  #contact .contact-form :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #adb5bd;
+    font-style: italic; }
+  #contact .contact-form :-moz-placeholder {
+    /* Firefox 18- */
+    color: #adb5bd;
+    font-style: italic; }
 
 footer {
   color: #fff; }
@@ -195,7 +215,7 @@ footer {
           color: #000;
           background-image: url(../images/logo-reverse.png);
           width: 50px;
-          height: 67px; }
+          height: 68px; }
           #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
             color: black; }
         #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,

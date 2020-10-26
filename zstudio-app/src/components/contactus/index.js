@@ -81,44 +81,59 @@ class Contact extends Component {
                                    
                                     <div className="form-row">
                                         <div className="col-md-6 mb-3">
-                                            <label htmlFor="validationName">Your Name</label>
-                                            <input onChange={e => this.setState({ name: e.target.value })} 
-                                                id="validationName"
+                                            <label htmlFor="validationFirstName">Your First Name *</label>
+                                            <input onChange={e => this.setState({ firstname: e.target.value })} 
+                                                id="validationFirstName"
                                                 name="name" 
                                                 className="form-control" 
                                                 type="text" 
-                                                placeholder="Your Name" 
-                                                value={this.state.name} 
+                                                placeholder="John" 
+                                                value={this.state.firstname} 
                                                 required/>
-                                            <div className="invalid-feedback">Please enter your name.</div>
+                                            <div className="invalid-feedback">Please enter your first name.</div>
                                         </div>
                                         <div className="col-md-6 mb-3">
-                                        <label htmlFor="validationPhone">Your Phone</label>
+                                            <label htmlFor="validationLastName">Your Last Name *</label>
+                                            <input onChange={e => this.setState({ lastname: e.target.value })} 
+                                                id="validationLastName"
+                                                name="name" 
+                                                className="form-control" 
+                                                type="text" 
+                                                placeholder="White" 
+                                                value={this.state.lastname} 
+                                                required/>
+                                            <div className="invalid-feedback">Please enter your last name.</div>                                        
+                                        </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="validationPhone">Your Phone *</label>
                                             <input onChange={e => this.setState({ phone: e.target.value })} 
                                                 id="validationPhone"
                                                 name="phone" 
                                                 className="form-control" 
                                                 type="number" 
-                                                placeholder="Your Phone" 
+                                                placeholder="0422222222" 
                                                 value={this.state.phone} 
                                                 required/>
                                             <div className="invalid-feedback">Please enter valid number.</div>
                                         </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="validationEmail">Email address *</label>
+                                            <input onChange={(e) => this.setState({ email: e.target.value })} 
+                                                id='validationEmail'
+                                                name="email" 
+                                                className="form-control" 
+                                                type="email" 
+                                                placeholder="john.white@email.com" 
+                                                required 
+                                                value={this.state.email} />
+                                            <div className="invalid-feedback">Please enter valid email address.</div>
+                                        </div>
                                     </div>
+                                    
                                     <div className="form-group">
-                                        <label htmlFor="validationEmail">Email address</label>
-                                        <input onChange={(e) => this.setState({ email: e.target.value })} 
-                                            id='validationEmail'
-                                            name="email" 
-                                            className="form-control" 
-                                            type="email" 
-                                            placeholder="your@email.com" 
-                                            required 
-                                            value={this.state.email} />
-                                    <div className="invalid-feedback">Please enter valid email address.</div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="validationTextarea">Your Message</label>
+                                        <label htmlFor="validationTextarea">Your Message *</label>
                                         <textarea onChange={e => this.setState({ message: e.target.value })} 
                                                 id="validationTextarea"
                                                 name="message" 
@@ -128,7 +143,7 @@ class Contact extends Component {
                                                 value={this.state.message} required />
                                         <div className="invalid-feedback">Please enter a message in the textarea.</div>
                                     </div>
-                                    <div className="form-row">
+                                    <div className="form-group">
                                         <Reaptcha sitekey="6LeUL9sZAAAAAL_GgusbHniL4H39n30DmidApXc5" onVerify={this.onVerify} />
                                     </div>
                                     <button type="submit" formNoValidate className="btn btn-light btn-outline btn-outline-dark btn-xl">{this.state.buttonText}</button>                                 
